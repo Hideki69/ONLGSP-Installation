@@ -103,7 +103,7 @@ echo "Import SQL for MariaDB"
 echo "==============================================="
 echo " "
 
-/bin/cp /root/ONLGSP-Installation-master/ONLGSP/onlgsp.sql /root
+/bin/cp /root/ONLGSP-Installation-master/ONLGSP/onlgsp.sql /root/ONLGSP-Installation-master
 
 
 echo "CREATE DATABASE onlgsp" | mysql -u root
@@ -135,7 +135,7 @@ echo " "
 
 cp /root/ONLGSP-Installation-master/linuxgsm.sh /home/ONLGSP
 
-su ONLGSP
+
 
 sudo chown ONLGSP /home/ONLGSP/linuxgsm.sh
 
