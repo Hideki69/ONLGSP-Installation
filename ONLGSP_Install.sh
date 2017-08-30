@@ -93,7 +93,7 @@ echo " "
 
 
 git clone https://github.com/Hideki69/ONLGSP.git
-/bin/cp -R /root/ONLGSP/* /var/www/html
+/bin/cp -R /root/ONLGSP-Installation-master/ONLGSP/* /var/www/html
 
 
 
@@ -103,7 +103,7 @@ echo "Import SQL for MariaDB"
 echo "==============================================="
 echo " "
 
-/bin/cp /root/ONLGSP/onlgsp.sql /root
+/bin/cp /root/ONLGSP-Installation-master/ONLGSP/onlgsp.sql /root
 
 
 echo "CREATE DATABASE onlgsp" | mysql -u root
@@ -132,10 +132,8 @@ echo "Download Linux Game Server Manager  for ONLGSP"
 echo "==============================================="
 echo " "
 
-wget https://raw.githubusercontent.com/Hideki69/ONLGSP-Installation/master/linuxgsm.sh 
 
-
-cp /root/linuxgsm.sh /home/ONLGSP
+cp /root/ONLGSP-Installation-master/linuxgsm.sh /home/ONLGSP
 
 su ONLGSP
 
