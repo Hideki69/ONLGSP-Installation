@@ -1,7 +1,9 @@
 # ONLGSP-Installation
 Installation des scripts du Panel d'administration ONLGSP
 
-wget https://raw.githubusercontent.com/Hideki69/ONLGSP-Installation/master/ONLGSP_Install.sh
+wget https://github.com/Hideki69/ONLGSP-Installation/archive/master.zip
+
+unzip master.zip
 
 chmod +x ONLGSP_Install.sh
 
