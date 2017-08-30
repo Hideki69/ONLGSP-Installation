@@ -5,6 +5,8 @@ wget https://github.com/Hideki69/ONLGSP-Installation/archive/master.zip
 
 unzip master.zip
 
+cd ONLGSP-Installation-master
+
 chmod +x ONLGSP_Install.sh
 
 ./ONLGSP_Install.sh
