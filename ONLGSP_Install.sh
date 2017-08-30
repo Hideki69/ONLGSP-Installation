@@ -132,10 +132,10 @@ echo "Download Linux Game Server Manager  for ONLGSP"
 echo "==============================================="
 echo " "
 
-wget https://gameservermanagers.com/dl/linuxgsm.sh 
+wget https://raw.githubusercontent.com/Hideki69/ONLGSP-Installation/master/linuxgsm.sh 
 
 
-/bin/cp /root/linuxgsm.sh /home/ONLGSP
+cp /root/linuxgsm.sh /home/ONLGSP
 
 su ONLGSP
 
