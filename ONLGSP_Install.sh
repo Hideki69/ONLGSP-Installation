@@ -76,11 +76,11 @@ apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74C
 add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu xenial main'
 apt update -y && apt-get upgrade -y
 apt-get install mariadb-server mariadb-client
-echo "CREATE DATABASE ONLGSP" | mysql -u root
-echo "CREATE USER 'ONLGSP'@'%' IDENTIFIED BY 'passe'" | mysql -u root
-echo "GRANT ALL PRIVILEGES ON ONLGSP.* TO 'ONLGSP'@'%' " | mysql -u root
-echo "IDENTIFIED BY 'passe' WITH GRANT OPTION" | mysql -u root
-echo "FLUSH PRIVILEGES" | mysql -u root
+echo "CREATE DATABASE ONLGSP" | mysql -u root -p
+echo "CREATE USER 'ONLGSP'@'%' IDENTIFIED BY 'passe'" | mysql -u root -p
+echo "GRANT ALL PRIVILEGES ON ONLGSP.* TO 'ONLGSP'@'%' " | mysql -u root -p
+echo "IDENTIFIED BY 'passe' WITH GRANT OPTION" | mysql -u root -p
+echo "FLUSH PRIVILEGES" | mysql -u root -p
 mysql_secure_installation
 
 
