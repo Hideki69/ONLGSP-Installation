@@ -73,7 +73,7 @@ echo "Installing Linux Apache MariaDB PHP"
 echo "============================================"
 echo " "
 
-sudo apt install apache2 php7.1 mariadb-server libapache2-mod-php php-mysql
+sudo apt install apache2 php7.1 mariadb-server mariadb-client mysql_secure_installation libapache2-mod-php php-mysql
 rm /var/www/html/index.html
 
 
