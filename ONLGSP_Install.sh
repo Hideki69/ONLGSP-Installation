@@ -70,14 +70,40 @@ export LANG=C.UTF-8
 
 sudo add-apt-repository ppa:ondrej/php
 
-sudo apt-get update 
+apt-get update -y
+apt-get upgrade -y
+apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mariadb/repo/10.1/ubuntu xenial main'
+apt update -y && apt-get upgrade -y
+apt-get install mariadb-server mariadb-client
+mysql_secure_installation
+mysql -u root -p
+
+CREATE DATABASE ONLGSP;
+CREATE USER 'ONLGSP'@'%' IDENTIFIED BY 'passe';
+GRANT ALL PRIVILEGES ON ONLGSP.* TO 'ONLGSP'@'%' IDENTIFIED BY 'passe' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+
+systemctl restart mariadb.service
 
 echo "============================================"
 echo "Installing Linux Apache MariaDB PHP"
 echo "============================================"
 echo " "
 
-sudo apt install apache2 php7.1 mariadb-server mariadb-client mysql_secure_installation libapache2-mod-php php-mysql
+systemctl restart mariadb.service
+apt-get install apache2 
+a2enmod rewrite
+systemctl restart apache2
+apt-get update -y && apt-get upgrade -y
+sudo apt install php7.1  libapache2-mod-php php-mysql
+apt-get install php7.1-mbstring php7.1-zip php7.1-mysql php7.1-xmlwriter php7.1-tokenizer php7.1-interbase php7.1-pdo-mysql php7.1 php7.1-xmlreader php7.1-opcache php7.1-json php7.1-phar php7.1-xmlrpc php7.1-mysqlnd php7.1-curl php7.1-simplexml php7.1-bz2 php7.1-imap php7.1-intl php7.1-ftp php7.1-gmagick php7.1-common php7.1-gettext php7.1-yaml php7.1-soap php7.1-calendar php7.1-fileinfo php7.1-xdebug php7.1-ssh2 php7.1-mcrypt php7.1-geoip php7.1-gd php7.1-exif php7.1-mysqli php7.1-mysql php7.1-xml php7.1-apcu
+systemctl restart apache2
+apt-get install phpmyadmin
+
+
+
 rm /var/www/html/index.html
 
 
@@ -110,15 +136,12 @@ echo " "
 /bin/cp /root/ONLGSP-Installation-master/ONLGSP/onlgsp.sql /root/ONLGSP-Installation-master
 
 
-echo "CREATE DATABASE onlgsp" | mysql -u root
 
 
-mysql onlgsp < onlgsp.sql
 
-echo "==============================================="
-echo "Change password for Mariadb"
-echo "==============================================="
-echo " "
+mysql ONLGSP < onlgsp.sql
+
+
 
 echo "============================================"
 echo "Download and install Composer for ONLGSP"
