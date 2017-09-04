@@ -77,10 +77,10 @@ add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.jmu.edu/pub/mari
 apt update -y && apt-get upgrade -y
 apt-get install mariadb-server mariadb-client
 echo "CREATE DATABASE ONLGSP" | mysql -u root -p
-echo "CREATE USER 'ONLGSP'@'%' IDENTIFIED BY 'passe'" | mysql -u root -p
-echo "GRANT ALL PRIVILEGES ON ONLGSP.* TO 'ONLGSP'@'%' " | mysql -u root -p
-echo "IDENTIFIED BY 'passe' WITH GRANT OPTION" | mysql -u root -p
-echo "FLUSH PRIVILEGES" | mysql -u root -p
+#echo "CREATE USER 'ONLGSP'@'%' IDENTIFIED BY 'passe'" | mysql -u root -p
+#echo "GRANT ALL PRIVILEGES ON ONLGSP.* TO 'ONLGSP'@'%' " | mysql -u root -p
+#echo "IDENTIFIED BY 'passe' WITH GRANT OPTION" | mysql -u root -p
+#echo "FLUSH PRIVILEGES" | mysql -u root -p
 mysql_secure_installation
 
 
