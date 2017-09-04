@@ -48,9 +48,13 @@ echo "============================================"
 echo "Create new user ONLGSP on this server "
 echo "============================================"
 echo " "
+
 adduser ONLGSP --force-badname
 adduser ONLGSP sudo 
 adduser ONLGSP www-data
+adduser www-data ONLGSP
+#adduser www-data sudo
+
 
 echo "============================================"
 echo "Installing Linux Dependency for Game Server"
