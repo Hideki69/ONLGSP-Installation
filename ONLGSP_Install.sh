@@ -237,8 +237,14 @@ sudo -u ONLGSP bash /home/ONLGSP/linuxgsm.sh ut3server
 sudo -u ONLGSP bash /home/ONLGSP/linuxgsm.sh ut99server 
 
 
+echo "==============================================="
+echo "Add 000-default.conf sshd_config"
+echo "==============================================="
+echo " "
 
+cp /root/ONLGSP-Installation-master/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
+cp /root/ONLGSP-Installation-master/sshd_config /etc/ssh/sshd_config
 
 echo "============================================"
 echo "Installation is complete !!! "
