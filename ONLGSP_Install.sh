@@ -152,7 +152,7 @@ apt-get install composer
 
 cd /var/www/html
 
-composer install
+composer update
 
 echo "==============================================="
 echo "Download Linux Game Server Manager  for ONLGSP"
